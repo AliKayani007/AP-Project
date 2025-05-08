@@ -1,0 +1,94 @@
+{
+  "faqs": [
+    {
+      "question": "How does the AI adapt to my PC needs?",
+      "answer": "The AI adapts by analyzing your specific requirements and usage patterns."
+    },
+    {
+      "question": "What tools does your platform use for scans?",
+      "answer": "We use trusted third-party tools like Cinebench and CrystalMark for system scans."
+    },
+    {
+      "question": "Can I customize my PC?",
+      "answer": "Yes, you can customize your PC using our platform’s AI-driven features."
+    },
+    {
+      "question": "How do I get started with Clear Parts?",
+      "answer": "Click on 'Get Started,' log in, and you’re ready to go!"
+    },
+    {
+      "question": "What kind of support do you offer?",
+      "answer": "We offer scanning, personalized suggestions, and expert guidance."
+    }
+  ],
+  "agents": [
+    {
+      "id": "1",
+      "name": "Nova - AI Assistant",
+      "role": "AI Assistant",
+      "description": "Key Features:\n• Matches components based on real specifications\n• Prevents bottlenecks and compatibility issues\n• Saves time when upgrading or building\nCTA (optional): [Try Compatibility Bot]",
+      "image": "images/Sophia.png",
+      "glowColor": "#68E4FF"
+    },
+    {
+      "id": "2",
+      "name": "Lumi - Sales Strategist",
+      "role": "Sales Strategist",
+      "description": "Key Features:\n• Hardware health scoring\n• Alerts for overheating and aging components\n• Personalized recommendations for better performance\nCTA: [Scan My PC]",
+      "image": "images/Phone.png",
+      "glowColor": "#DC75F5"
+    },
+    {
+      "id": "3",
+      "name": "Neon - eCommerce Expert",
+      "role": "eCommerce Expert",
+      "description": "Key Features:\n• Real-time market-based pricing\n• Upgrade suggestions tailored to your goals\n• Cost vs. performance breakdown\nCTA: [Estimate Value]",
+      "image": "images/Business.png",
+      "glowColor": "#68E4FF"
+    }
+  ],
+  "features": [
+    {
+      "icon": "images/message.png",
+      "title": "24/7 AI Agents",
+      "description": "Our AI-powered agents are available around the clock to handle all PC-related queries."
+    },
+    {
+      "icon": "images/globe.png",
+      "title": "Market Insights",
+      "description": "AI agents that adapt to the latest market trends and business needs."
+    },
+    {
+      "icon": "images/send.png",
+      "title": "Report Generator",
+      "description": "Generate easy-to-understand reports on component condition and performance."
+    },
+    {
+      "icon": "images/user.png",
+      "title": "Smart Marketplace",
+      "description": "Our AI agents continuously improve by learning from past user interactions."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Emma Clarke",
+      "title": "Head of Support, Nexora Solutions",
+      "review": "The Sophia Customer Engagement Agent has transformed our support system! It instantly handles queries, resolves issues efficiently, and has improved our response time by 70%. Our customers love the seamless experience!"
+    },
+    {
+      "name": "Daniel Foster",
+      "title": "Marketing Lead, Virex Media",
+      "review": "The Sophia Social Media Agent on Telegram is a lifesaver! It manages all customer inquiries efficiently and provides instant responses. I can't imagine how we managed customer queries before!"
+    },
+    {
+      "name": "Samantha Rodriguez",
+      "title": "Founder, EcomEase",
+      "review": "I was skeptical at first, but Sophia AI exceeded my expectations. The customer engagement agent provides round-the-clock support, reducing the workload for my team while ensuring an excellent customer experience."
+    },
+    {
+      "name": "Liam Harrison",
+      "title": "Community Manager, Digitech Group",
+      "review": "Using the Sophia Social Media Agent on Telegram has significantly boosted our engagement. It responds to messages, shares updates, and interacts with users in real time. A must-have for any brand!"
+    }
+  ]
+}

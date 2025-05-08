@@ -1,34 +1,35 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
-const FAQs = [
-    {
-        question: "How does the AI adapt to my PC needs?",
-        answer:
-            "The AI adapts by analyzing your need and demand.",
-    },
-    {
-        question: "What tools does your platform use for scans?",
-        answer:
-            "Our platform uses trusted famous third party tools like cinebench,crystalmark for scans.",
-    },
-    {
-        question: "Can I customize my PC?",
-        answer:
-            "Yes, you can customize your PC through the platform's AI-driven features.",
-    },
-    {
-        question: "How do I get started with Clear Parts?",
-        answer:
-            "Click on 'Get Started,' log in, and you'r ready to go!",
-    },
-    {
-        question: "What kind of support do you offer?",
-        answer:
-            "Scanning, Suggestions and Guidence!",
-    },
-];
-export default function FAQSection() {
+// const FAQs = [
+//     {
+//         question: "How does the AI adapt to my PC needs?",
+//         answer:
+//             "The AI adapts by analyzing your need and demand.",
+//     },
+//     {
+//         question: "What tools does your platform use for scans?",
+//         answer:
+//             "Our platform uses trusted famous third party tools like cinebench,crystalmark for scans.",
+//     },
+//     {
+//         question: "Can I customize my PC?",
+//         answer:
+//             "Yes, you can customize your PC through the platform's AI-driven features.",
+//     },
+//     {
+//         question: "How do I get started with Clear Parts?",
+//         answer:
+//             "Click on 'Get Started,' log in, and you'r ready to go!",
+//     },
+//     {
+//         question: "What kind of support do you offer?",
+//         answer:
+//             "Scanning, Suggestions and Guidence!",
+//     },
+// ];
+
+export default function FAQSection({faqs}) {
     const [faqOpen, setFaqOpen] = useState(null);
 
     return (
@@ -43,7 +44,7 @@ export default function FAQSection() {
                     </p>
                 </div>
                 <div className="md:w-1/2 space-y-3 sm:space-y-4 duration-200 ease-in-out transition-all">
-                    {FAQs.map((faq, index) => (
+                    {faqs.map((faq, index) => (
                         <div key={index} className="bg-gray-900 rounded-lg">
                             <button
                                 className="w-full flex justify-between items-center p-4 text-left"

@@ -3,48 +3,48 @@ import GradientText from "../ui/GradientText";
 import BlurredCircleLeft from "../ui/BlurredCircleLeft";
 import GlowEffect from "../ui/GlowEffect";
 
-export default function AgentsSection() {
-    const agents = [
-        {
-            id: "1",
-            name: "Nova - AI Assistant",
-            role: "AI Assistant",
-            description:
-                "Key Features:\n" +
-                "• Matches components based on real specs\n" +
-                "• Helps avoid bottlenecks and compatibility issues\n" +
-                "• Saves time when upgrading or building\n" +
-                "CTA (optional): [Try Compatibility Bot]",
-            image: "images/Sophia.png",
-            glowColor: "#68E4FF",
-        },
-        {
-            id: "2",
-            name: "Lumi - Sales Strategist",
-            role: "Sales Strategist",
-            description:
-                "Key Features:\n" +
-                "• Hardware health scoring\n" +
-                "• Alerts for overheating, aging parts, etc.\n" +
-                "• Personalized recommendations to improve performance\n" +
-                "CTA: [Scan My PC]",
-            image: "images/Phone.png",
-            glowColor: "#DC75F5",
-        },
-        {
-            id: "3",
-            name: "Neon - eCommerce Expert",
-            role: "eCommerce Expert",
-            description:
-                "Key Features:\n" +
-                "• Real-time market-based pricing\n" +
-                "• Upgrade suggestions for your goals\n" +
-                "• Cost vs. performance breakdown\n" +
-                "CTA: [Estimate Value]",
-            image: "images/Business.png",
-            glowColor: "#68E4FF",
-        },
-    ];
+export default function AgentsSection({agents}) {
+    // const agents = [
+    //     {
+    //         id: "1",
+    //         name: "Nova - AI Assistant",
+    //         role: "AI Assistant",
+    //         description:
+    //             "Key Features:\n" +
+    //             "• Matches components based on real specs\n" +
+    //             "• Helps avoid bottlenecks and compatibility issues\n" +
+    //             "• Saves time when upgrading or building\n" +
+    //             "CTA (optional): [Try Compatibility Bot]",
+    //         image: "images/Sophia.png",
+    //         glowColor: "#68E4FF",
+    //     },
+    //     {
+    //         id: "2",
+    //         name: "Lumi - Sales Strategist",
+    //         role: "Sales Strategist",
+    //         description:
+    //             "Key Features:\n" +
+    //             "• Hardware health scoring\n" +
+    //             "• Alerts for overheating, aging parts, etc.\n" +
+    //             "• Personalized recommendations to improve performance\n" +
+    //             "CTA: [Scan My PC]",
+    //         image: "images/Phone.png",
+    //         glowColor: "#DC75F5",
+    //     },
+    //     {
+    //         id: "3",
+    //         name: "Neon - eCommerce Expert",
+    //         role: "eCommerce Expert",
+    //         description:
+    //             "Key Features:\n" +
+    //             "• Real-time market-based pricing\n" +
+    //             "• Upgrade suggestions for your goals\n" +
+    //             "• Cost vs. performance breakdown\n" +
+    //             "CTA: [Estimate Value]",
+    //         image: "images/Business.png",
+    //         glowColor: "#68E4FF",
+    //     },
+    // ];
 
     return (
         <>

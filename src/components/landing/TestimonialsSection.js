@@ -57,33 +57,7 @@ const BlurredCircle = () => {
     );
 };
 
-export default function TestimonialSection() {
-    const testimonials = [
-        {
-            name: "Emma Clarke",
-            title: "Head of Support, Nexora Solutions",
-            review:
-                "Sophia Customer Engagement Agent has transformed our support system! It instantly handles queries, resolves issues efficiently, and has improved our response time by 70%. Our customers love the seamless experience!",
-        },
-        {
-            name: "Daniel Foster",
-            title: "Marketing Lead, Virex Media",
-            review:
-                "The Sophia Social Media Agent on Telegram is a lifesaver! It manages all customer inquiries efficiently and provides instant responses. I can't imagine how we handled customer queries before!",
-        },
-        {
-            name: "Samantha Rodriguez",
-            title: "Founder, EcomEase",
-            review:
-                "I was skeptical at first, but Sophia AI exceeded my expectations. The customer engagement agent provides round-the-clock support, reducing workload for my team while ensuring a great customer experience.",
-        },
-        {
-            name: "Liam Harrison",
-            title: "Community Manager, Digitech Group",
-            review:
-                "Using Sophia Social Media Agent on Telegram has significantly boosted our engagement. It responds to messages, shares updates, and interacts with users in real time. A must-have for any brand!",
-        },
-    ];
+export default function TestimonialSection({testimonials}) {
 
     return (
         <section className="to-black w-full flex items-center justify-center text-white px-6 py-8 sm:py-12 md:py-32 relative">
