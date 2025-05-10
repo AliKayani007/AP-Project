@@ -10,7 +10,7 @@ export default function ProductCard({ product }) {
                 {/* Product Image */}
                 <div className="relative mt-4 h-48 w-full overflow-hidden rounded-lg">
                     <img
-                        src={product.image_url || "/images/default-product.png"}
+                        src={product.image_path}
                         alt={product.name}
                         className="w-full h-full object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
                     />

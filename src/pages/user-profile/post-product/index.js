@@ -11,6 +11,7 @@ export default function PostProductPage() {
     description: "",
     price: "",
     category: "",
+    image_path:"",
     condition: "New",
   });
 
@@ -49,6 +50,7 @@ export default function PostProductPage() {
           price: form.price,
           condition: form.condition,
           type: form.category,
+          image_path:form.image_path,
         }),
       });
 
@@ -61,6 +63,7 @@ export default function PostProductPage() {
           description: "",
           price: "",
           category: "",
+          image_path:"",
           condition: "New",
         });
       } else {
@@ -113,6 +116,13 @@ export default function PostProductPage() {
               onChange={handleChange}
               className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
             />
+ <input
+              name="image_path"
+              placeholder="Image Url"
+              onChange={handleChange}
+              className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
+            />
+
             <div>
               <label className="block text-white mb-2">Product Condition</label>
               <select
