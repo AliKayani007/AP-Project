@@ -63,7 +63,7 @@ export default function UserProfilePage() {
             </li>
           </ul>
 
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <button
               onClick={() => setShowEditForm((prev) => !prev)}
               className="px-6 py-2 rounded bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:brightness-110 transition"
@@ -72,7 +72,7 @@ export default function UserProfilePage() {
             </button>
 
             {showEditForm && <EditProfileForm />}
-          </div>
+          </div> */}
         </main>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { supabase } from "@/utils/supabaseClient"; // ✅ your client
+import { supabase } from "@/utils/supabaseClient"; 
 
 const AuthContext = createContext();
 
@@ -24,13 +24,13 @@ export const AuthProvider = ({ children }) => {
       }
     );
 
-    // Cleanup subscription on unmount
+    
     return () => {
       authListener?.subscription.unsubscribe();
     };
   }, []);
 
-  const value = { user, loading }; // you can expand later if needed
+  const value = { user, loading }; 
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

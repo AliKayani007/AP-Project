@@ -1,5 +1,5 @@
-// pages/api/auth/login.js
-import { supabase } from "@/utils/supabaseClient"; // Adjust path as needed
+
+import { supabase } from "@/utils/supabaseClient"; 
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {

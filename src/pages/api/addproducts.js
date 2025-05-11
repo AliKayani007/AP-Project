@@ -6,10 +6,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, description, price, condition, type,image_path } = req.body;
+  const { user_id, name, description, price, condition, type, image_path } = req.body;
 
 
-  if (!name || !description || !price || !condition || !type || !image_path) {
+  if (!user_id || !name || !description || !price || !condition || !type || !image_path) {
     return res.status(400).json({ error: "All fields are required." });
   }
 
@@ -18,6 +18,7 @@ export default async function handler(req, res) {
       .from("components") 
       .insert([
         {
+          user_id,
           name,
           description,
           price,

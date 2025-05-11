@@ -1,7 +1,7 @@
 // pages/index.jsx
 import Head from "next/head";
-import fs from 'fs/promises';
-import path from 'path';
+import fs from "fs/promises";
+import path from "path";
 // Landing page sections
 import HeroSection from "@/components/landing/HeroSection";
 import AgentsSection from "@/components/landing/AgentsSection";
@@ -13,37 +13,38 @@ import FAQSection from "@/components/landing/FAQSection";
 
 import Layout from "@/components/layout/layout";
 export default function Home(props) {
-  const faqs=props.faqs;
-  const agents=props.agents;
-  const features=props.features;
-  const testimonials=props.testimonials;
-  return (
+  const faqs = props.faqs;
+  const agents = props.agents;
+  const features = props.features;
   
+  const testimonials = props.testimonials;
+  return (
     <div className="h-full bg-black text-white relative overflow-x-hidden">
       <Head>
         <title>AI-Powered Agents | Clear Parts</title>
-        <meta name="description" content="Next-gen AI platform for PC enthusiastic." />
+        <meta
+          name="description"
+          content="Next-gen AI platform for PC enthusiastic."
+        />
       </Head>
 
       <HeroSection />
-      <AgentsSection agents={agents}/>
+      <AgentsSection agents={agents} />
       <AvailabilitySection />
-      <FeaturesSection  feature={features}/>
+      <FeaturesSection feature={features} />
       <IntegrationsSection />
-    <TestimonialsSection testimonials={testimonials}/>
+      <TestimonialsSection testimonials={testimonials} />
       <FAQSection faqs={faqs} />
-
-      </div>
- 
+    </div>
   );
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(),'data', 'data.json');
+  const filePath = path.join(process.cwd(), "data", "data.json");
   const dataJson = await fs.readFile(filePath);
   const data = JSON.parse(dataJson);
 
-  const { faqs, agents,features, testimonials } = data;
+  const { faqs, agents, features, testimonials } = data;
 
   return {
     props: {

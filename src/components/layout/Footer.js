@@ -56,21 +56,7 @@ export default function Footer() {
                 </div>
 
                 {/* Email Subscription Section */}
-                <div className=" flex flex-col w-full md:w-[400px] shrink-0 ">
-                    <h4 className="text-white font-bold mb-3 text-base text-center md:text-left">
-                        Subscribe To Newsletter
-                    </h4>
-                    <div className="flex flex-col md:flex-row items-center md:items-end gap-3 w-full">
-                        <input
-                            type="email"
-                            placeholder="Enter Email Address"
-                            className="p-4 bg-gray-800 rounded-lg w-full md:w-72 text-white placeholder-gray-400 text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 hover:bg-gray-700"
-                        />
-                        <button className="bg-indigo-500 px-6 py-4 text-white font-bold rounded-lg text-base transition-all duration-300 hover:bg-indigo-600 hover:scale-105 w-full md:w-auto">
-                            SUBSCRIBE
-                        </button>
-                    </div>
-                </div>
+             
             </div>
 
         </footer>

@@ -8,35 +8,46 @@ const ContactForm = () => {
     email: "",
     business_name: "",
     features: "",
-    description: "",
+    usecase: "",
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission (No Supabase functionality for now)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setMessage("");
 
-    // Simulate a form submission (remove Supabase functionality)
-    setTimeout(() => {
-      setLoading(false);
-      setMessage("Form submitted successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        business_name: "",
-        features: "",
-        description: "",
+    try {
+      const res = await fetch("/api/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    }, 2000); // Simulating a delay of 2 seconds for the form submission
 
+      if (res.ok) {
+        setMessage("Form submitted successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          business_name: "",
+          features: "",
+          usecase: "",
+        });
+        setLoading(false)
+      } else {
+        const errorData = await res.json();
+        setMessage(`Error: ${errorData.message}`);
+      }
+    } catch (error) {
+      setMessage("Error submitting the form. Please try again.");
+    } 
   };
 
   return (
@@ -93,8 +104,8 @@ const ContactForm = () => {
             What do you need your AI agent to do? *
           </label>
           <textarea
-            name="description"
-            value={formData.description}
+            name="usecase"
+            value={formData.usecase}
             onChange={handleChange}
             placeholder="Describe your use case"
             className="h-40 w-full rounded-xl bg-white/10 px-4 py-3 text-white placeholder-[#6B7274] outline-none resize-none"
@@ -114,7 +125,9 @@ const ContactForm = () => {
 
         {message && (
           <p
-            className={`mt-4 text-center ${message.includes("Error") ? "text-red-500" : "text-green-500"}`}
+            className={`mt-4 text-center ${
+              message.includes("Error") ? "text-red-500" : "text-green-500"
+            }`}
           >
             {message}
           </p>

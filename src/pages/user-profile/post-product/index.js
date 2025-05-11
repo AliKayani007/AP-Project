@@ -3,6 +3,7 @@ import { useAuth } from "@/context/auth-context";
 import { useEffect, useState } from "react";
 import BlurredCircle from "@/components/ui/BlurredCircle";
 import { useRouter } from "next/router";
+
 export default function PostProductPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -11,9 +12,10 @@ export default function PostProductPage() {
     description: "",
     price: "",
     category: "",
-    image_path:"",
+    image_path: "",
     condition: "New",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); // To track form submission state
 
   useEffect(() => {
     if (!loading && !user) {
@@ -26,9 +28,9 @@ export default function PostProductPage() {
   }
 
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
+    const { name, value } = e.target;
 
-    // For all inputs except file input, update the state
+    
     setForm((prevForm) => ({
       ...prevForm,
       [name]: value,
@@ -37,6 +39,7 @@ export default function PostProductPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true); 
 
     try {
       const res = await fetch("/api/addproducts", {
@@ -45,12 +48,13 @@ export default function PostProductPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          user_id: user.id,
           name: form.name,
           description: form.description,
           price: form.price,
           condition: form.condition,
           type: form.category,
-          image_path:form.image_path,
+          image_path: form.image_path,
         }),
       });
 
@@ -63,7 +67,7 @@ export default function PostProductPage() {
           description: "",
           price: "",
           category: "",
-          image_path:"",
+          image_path: "",
           condition: "New",
         });
       } else {
@@ -73,6 +77,8 @@ export default function PostProductPage() {
     } catch (err) {
       console.error("Unexpected error:", err);
       alert("An error occurred while posting the product.");
+    } finally {
+      setIsSubmitting(false); 
     }
   };
 
@@ -96,33 +102,37 @@ export default function PostProductPage() {
               name="name"
               placeholder="Product Name"
               onChange={handleChange}
+              value={form.name}
               className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
             />
             <textarea
               name="description"
               placeholder="Description"
               onChange={handleChange}
+              value={form.description}
               className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
             />
             <input
               name="price"
               placeholder="Price"
               onChange={handleChange}
+              value={form.price}
               className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
             />
             <input
               name="category"
               placeholder="Category"
               onChange={handleChange}
+              value={form.category}
               className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
             />
- <input
+            <input
               name="image_path"
               placeholder="Image Url"
               onChange={handleChange}
+              value={form.image_path}
               className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
             />
-
             <div>
               <label className="block text-white mb-2">Product Condition</label>
               <select
@@ -143,21 +153,12 @@ export default function PostProductPage() {
               </select>
             </div>
 
-            {/* <div>
-              <label className="block text-white mb-2">Product Images</label>
-              <input
-                type="file"
-                name="imageUrl"
-                multiple
-                onChange={handleChange}
-                className="w-full p-3 rounded bg-white/10 text-white placeholder:text-gray-400 focus:outline-none"
-              />
-            </div> */}
             <button
               type="submit"
-              className="w-full py-3 rounded bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:brightness-110 transition"
+              disabled={isSubmitting} 
+              className="w-full py-3 rounded bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:brightness-110 transition disabled:opacity-50"
             >
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
         </main>
