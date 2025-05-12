@@ -24,6 +24,7 @@ export default function FavouritesPage() {
         .then((data) => {
           if (data.products) {
             setFavouriteProducts(data.products);
+            setIsLoading(false);
           }
         })
         .catch((err) => console.error("Error fetching products:", err));

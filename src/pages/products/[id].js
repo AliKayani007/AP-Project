@@ -5,6 +5,8 @@ import BlurredCircle from "@/components/ui/BlurredCircle";
 import { StarIcon, ChevronLeftIcon, ShoppingCartIcon } from "lucide-react";
 import { useAuth } from "@/context/auth-context";
 import Image from "next/image";
+import CommentsForm from "@/components/forms/comments/comments";
+import CommentsList from "@/components/forms/comments/CommentList";
 export default function ProductDetailPage({ product }) {
   const router = useRouter();
   const [selectedImage, setSelectedImage] = useState(0);
@@ -191,6 +193,10 @@ export default function ProductDetailPage({ product }) {
           </div>
         </div>
       </div>
+      <CommentsForm pid={product.id} />
+      <CommentsList pid={product.id}/>
+      
+
     </div>
   );
 }
