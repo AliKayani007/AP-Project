@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import Navbar from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { AuthProvider } from "@/context/auth-context"; // ✅ Import the AuthProvider
+import { AuthProvider } from "@/context/auth-context";
 
 export default function App({ Component, pageProps }) {
   return (
